@@ -29,7 +29,7 @@ def recurrev(number, rev):
 num = 12321
 reverse = 0
 reverse = recurrev(num, reverse)
-print(str(num) + "is: ", end="")
+print(str(num) + " is: ", end="")
 print("Palindrome") if reverse == num else print("Not palindrome")
 
 # Method 4: Using Character matching
@@ -61,11 +61,37 @@ s = "nayan"
 print("Palindrome") if checkPalindrome(s) else("Not palindrome")
 
 # Method 7: Building reverse one char at a time
-str = "123"
+string = "123"
 rev = ''
-for char in str:
+for char in string:
     rev = char + rev
 print("Palindrome") if str == rev else print("Not Palindrome")
 
-print("string: " + str(str))
+print("string: " + str(string))
 print("rev: " + str(rev))
+
+# Method 8: Using Flag
+string = "radar"
+j = -1
+flag = 0
+for char in string:
+    if char != string[j]:
+        flag = 1
+        break
+    j = j-1
+print(string + " is : ", end="")
+print("Not Palindrome") if flag else print("Palindrome")
+
+# Method 8: Bonus using backward slicing
+str1 = "radar"
+n = len(str1)
+c = []
+for i in range(n-1, -1, -1):
+    c.append(str1[i])
+rev = "".join(c)
+
+print(str1 + " is: ", end="")
+if str1 == rev:
+    print("Palindrome")
+else:
+    print("Not Palindrome")
