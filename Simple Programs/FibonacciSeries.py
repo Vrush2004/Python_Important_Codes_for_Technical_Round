@@ -27,3 +27,15 @@ else:
 
 for i in range(num):
     print(fibonacciSeries(i), end=" ")
+
+# Method 3: Using direct formulae
+# Fn = {[(√5 + 1)/2] ^ n} / √5
+import math
+def fibonacciSeries(phi, n):
+    for i in range(0, n+1):
+        result = round(pow(phi, i) / math.sqrt(5))
+        print(result, end=" ")
+
+num = 10
+phi= (1 + math.sqrt(5)) / 2
+fibonacciSeries(phi, num)
